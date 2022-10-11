@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 
-
 @Component({
   selector: 'app-counter',
   template: `
@@ -14,7 +13,7 @@ import { Component } from "@angular/core";
   `
 })
 
-export class CounterComponent {
+export class ContadorComponent {
 
   title   : string = 'Contador App';
   counter : number = 0;

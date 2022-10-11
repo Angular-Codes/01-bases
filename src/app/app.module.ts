@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { CounterComponent } from './counter/counter.component';
-import { HeroeComponent } from './heroes/heroe/heroe.component';
+import { CounterModule } from './counter/counter.module';
+import { HeroeModule } from './heroes/heroes.module';
+// import { HeroeComponent } from './heroes/heroe/heroe.component';
+// import { ListadoComponent } from './heroes/listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // declaro el componente para usarlo
-    CounterComponent,
-    HeroeComponent
+    // Declaro el componente para usarlo
+    // HeroeComponent,
+    // ListadoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // Declaramos el modulo para usarlo
+    HeroeModule,
+    CounterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
