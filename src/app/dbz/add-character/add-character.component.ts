@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-add-character',
@@ -9,16 +10,21 @@ import { Character } from '../interfaces/dbz.interface';
 export class AddCharacterComponent {
 
   // @Input() characters: Character[] = [];
-  @Output() onNewCharacter: EventEmitter<Character> = new EventEmitter();
+  // @Output() onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   newCharacter = {
     name: '',
     power: 0
   }
 
+  constructor(
+    private dbzService: DbzService
+  ) { }
+
   agregar() {
     if (this.newCharacter.name.trim().length === 0) { return; }
-    this.onNewCharacter.emit(this.newCharacter);
+    // this.onNewCharacter.emit(this.newCharacter);
+    this.dbzService.addCharacter(this.newCharacter);
     this.clear();
   }
 

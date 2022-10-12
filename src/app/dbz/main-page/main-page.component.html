@@ -2,15 +2,15 @@
 <div class="row">
   
   <div class="col">
+    <!-- [characters]="characters" -->
     <app-character 
-    [characters]="characters"
     >
     </app-character>
   </div>
 
   <div class="col">
+    <!-- (onNewCharacter)="addCharacter($event)" -->
    <app-add-character
-    (onNewCharacter)="addCharacter($event)"
    >
    </app-add-character>
   </div>
